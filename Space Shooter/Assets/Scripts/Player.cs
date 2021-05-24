@@ -6,9 +6,8 @@ public class Player : MonoBehaviour
 {
     //cofig params
     float playerSpeed = 10f;
-    float playerSpeedMouse = 10f;
     float xMin, yMin, xMax, yMax, padding = 1f;
-    float playerHP = 100f;
+    //float playerHP = 100f;
     float projectileTime = 0.05f;
     
     [SerializeField] GameObject laserPrefab;
