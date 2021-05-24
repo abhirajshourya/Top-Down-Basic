@@ -8,21 +8,23 @@ public class Player : MonoBehaviour
     float playerSpeed = 10f;
     float playerSpeedMouse = 10f;
     float xMin, yMin, xMax, yMax, padding = 1f;
+    float playerHP = 100f;
+    float projectileTime = 0.05f;
     
     [SerializeField] GameObject laserPrefab;
-    [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] float projectileSpeed = 15f;
+    Coroutine firingCoroutine;
 
     // Start is called before the first frame update
     void Start()
     {
         SetUpBoundaries();
-    }
+    }  
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        MovewithMouse();
         Shoot();
     }
     private void SetUpBoundaries()
@@ -45,23 +47,24 @@ public class Player : MonoBehaviour
         transform.position = new Vector2(newXPos, newYPos);
     }
 
-    private void MovewithMouse()
-    {      
-        var deltaX = Input.GetAxis("Mouse X") * Time.deltaTime * playerSpeedMouse;
-        var deltaY = Input.GetAxis("Mouse Y") * Time.deltaTime * playerSpeedMouse;
-
-        var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
-        var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
-
-        transform.position = new Vector2(newXPos, newYPos);
+    IEnumerator FireContinuously()
+    {
+        while(true)
+        {
+        GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
+        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+        yield return new WaitForSeconds(projectileTime);
+        }
     }
-
     private void Shoot()
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
-            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+            firingCoroutine = StartCoroutine(FireContinuously());
+        }
+        if(Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(firingCoroutine);
         }
     }
 }
