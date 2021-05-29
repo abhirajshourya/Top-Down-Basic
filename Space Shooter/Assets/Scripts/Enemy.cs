@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetShots = 0.2f;
     [SerializeField] float maxTimeBetShots = 3f;
+    [SerializeField] GameObject laserPrefab;
+    [SerializeField] float projectileSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,21 +28,24 @@ public class Enemy : MonoBehaviour
         if(shotCounter <= 0f)
         {
             Fire();
+            shotCounter = Random.Range(minTimeBetShots, maxTimeBetShots);
         }
     }
 
     private void Fire()
     {
-        
+        GameObject enemyLaser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
+        enemyLaser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        Destroy(other.gameObject);
 
-        PrecessHit(damageDealer);
+        ProcessHit(damageDealer);
     }
 
-    private void PrecessHit(DamageDealer damageDealer)
+    private void ProcessHit(DamageDealer damageDealer)
     {
         enemyHealth -= damageDealer.GetDamage();
 
