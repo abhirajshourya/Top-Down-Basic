@@ -34,21 +34,21 @@ public class Enemy : MonoBehaviour
 
     private void Fire()
     {
-        GameObject enemyLaser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
+        var newPos = new Vector2(transform.position.x, transform.position.y-1);
+        GameObject enemyLaser = Instantiate(laserPrefab, newPos, Quaternion.identity) as GameObject;
         enemyLaser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        Destroy(other.gameObject);
-
+        if(!damageDealer) {   return; }
         ProcessHit(damageDealer);
     }
 
     private void ProcessHit(DamageDealer damageDealer)
     {
         enemyHealth -= damageDealer.GetDamage();
-
+        damageDealer.Hit();
         if (enemyHealth <= 0)
         {
             Destroy(gameObject);

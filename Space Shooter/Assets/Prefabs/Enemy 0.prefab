@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5310850869378138775}
   - component: {fileID: 6609229866785140333}
   - component: {fileID: -1871253809160558289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce206e5bfcfe384c88c6cca845c7941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 500
+  enemyHealth: 250
   shotCounter: 0
   minTimeBetShots: 3
   maxTimeBetShots: 5
