@@ -98,6 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHP: 200
+  projectileTime: 0.05
+  deathSFX: {fileID: 8300000, guid: a9c7f0977787e254ea04acca682e75d2, type: 3}
+  deathSFXVolume: 0.5
+  shootSFX: {fileID: 8300000, guid: 8bcaa4dcd7587a34abf5719f74a9d021, type: 3}
+  shootSFXVolume: 0.1
   laserPrefab: {fileID: 7477787663504364742, guid: cbd2e3f98b9709d4eb59496fa44b59e6, type: 3}
   projectileSpeed: 15
 --- !u!58 &2126522514257180025

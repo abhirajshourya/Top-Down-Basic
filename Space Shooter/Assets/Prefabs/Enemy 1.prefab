@@ -133,4 +133,10 @@ MonoBehaviour:
   minTimeBetShots: 3
   maxTimeBetShots: 5
   laserPrefab: {fileID: 401382928205699671, guid: 3de80e81a91143148b398ec65a1d7054, type: 3}
+  deathVFX: {fileID: 3218850001921264529, guid: 92fdeb22a99092845924112588046124, type: 3}
+  durationOfExplosion: 1
   projectileSpeed: 2
+  deathSFX: {fileID: 8300000, guid: 8657ec587df616a4f9978239ea85ade5, type: 3}
+  deathSFXVolume: 0.5
+  shootSFX: {fileID: 8300000, guid: 25a47ed0a1d8eaa44bde1922e0598cf0, type: 3}
+  shootSFXVolume: 0.5
