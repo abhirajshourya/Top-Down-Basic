@@ -134,10 +134,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BG_Stars
       objectReference: {fileID: 0}
-    - target: {fileID: 4538051275687507363, guid: df1c71a5768be174aa059fa3015ed533, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e65bd6292c965bd4c9429c87beab8ca8, type: 2}
     - target: {fileID: 4538051275687507365, guid: df1c71a5768be174aa059fa3015ed533, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -362,10 +358,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 803315174, guid: 37bd57fa0a4797b4989eff166a659d1b, type: 3}
-      propertyPath: backgroundSrollSpeed
-      value: 0.02
-      objectReference: {fileID: 0}
     - target: {fileID: 4538051275687507360, guid: 37bd57fa0a4797b4989eff166a659d1b, type: 3}
       propertyPath: m_Name
       value: Background
