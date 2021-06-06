@@ -91,15 +91,20 @@ public class Player : MonoBehaviour
         damageDealer.Hit();
         if (playerHP <= 0)
         {
+
             Die();
         }
     }
 
+    public float GetPlayerHP()
+    {
+        return playerHP;
+    }
+
     private void Die()
     {
-        
-        Destroy(gameObject);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathSFXVolume);
         FindObjectOfType<Level>().LoadGameOver();
+        Destroy(gameObject);
     }
 }

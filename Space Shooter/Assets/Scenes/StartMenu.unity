@@ -327,6 +327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music
       objectReference: {fileID: 0}
+    - target: {fileID: 7455745920428900494, guid: 636c4dd93bbf7ed4dbf6dd2a1c7107cb, type: 3}
+      propertyPath: m_Pitch
+      value: 0.28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 636c4dd93bbf7ed4dbf6dd2a1c7107cb, type: 3}
 --- !u!114 &791024016 stripped

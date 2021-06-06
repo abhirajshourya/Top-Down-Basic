@@ -583,6 +583,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1506377359}
+    - target: {fileID: 5228231602934977925, guid: 4c31f09dbe2143445abb68df9572fe9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadStartMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8693698648712491944, guid: 4c31f09dbe2143445abb68df9572fe9d, type: 3}
       propertyPath: m_Name
       value: End Canvas
